@@ -20,7 +20,6 @@ object DB {
             "test"
 
         ).fallbackToDestructiveMigration()
-            .allowMainThreadQueries()
             .build()
     }
 
