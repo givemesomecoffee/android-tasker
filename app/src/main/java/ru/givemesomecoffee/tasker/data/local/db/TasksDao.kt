@@ -13,6 +13,9 @@ interface TasksDao {
     @Query("SELECT * from tasks")
     fun getTasks(): Flowable<List<TaskRoom>>
 
+    @Query("SELECT * from tasks WHERE title LIKE :string")
+    fun searchTasks(string: String): Flowable<List<TaskRoom>>
+
     @Insert
     fun addTask(taskRoom: TaskRoom): Completable
 

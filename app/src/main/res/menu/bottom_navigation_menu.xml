@@ -6,5 +6,8 @@
         android:title="Undone" />
     <item android:title="Done" />
     <item android:title="Archive" />
-    <item android:title="Search" />
+    <item
+        android:id="@+id/taskSearchFragment"
+        android:title="Search"
+        />
 </menu>

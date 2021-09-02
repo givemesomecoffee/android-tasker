@@ -1,4 +1,4 @@
-package ru.givemesomecoffee.tasker.task.list.widget
+package ru.givemesomecoffee.tasker.task.widget
 
 import android.view.View
 import android.widget.TextView

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import ru.givemesomecoffee.tasker.R
 import ru.givemesomecoffee.tasker.data.local.db.TaskRoom
-import ru.givemesomecoffee.tasker.task.list.widget.TasksListAdapter
+import ru.givemesomecoffee.tasker.task.widget.TasksListAdapter
 
 class TasksListFragment : Fragment(R.layout.fragment_tasks_list) {
     private lateinit var buttonTaskAdd: MaterialButton

@@ -18,4 +18,8 @@
         android:id="@+id/singleTaskFragment"
         android:name="ru.givemesomecoffee.tasker.task.edit.TaskEditFragment"
         android:label="SingleTaskFragment" />
+    <fragment
+        android:id="@+id/taskSearchFragment"
+        android:name="ru.givemesomecoffee.tasker.task.search.TaskSearchFragment"
+        android:label="TaskSearchFragment" />
 </navigation>

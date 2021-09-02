@@ -7,4 +7,5 @@ interface TasksRepository {
 
     fun getTasks(): Flowable<List<TaskRoom>>
 
+    fun searchTasks(query: String): Flowable<List<TaskRoom>>
 }

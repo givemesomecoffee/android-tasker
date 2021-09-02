@@ -11,4 +11,8 @@ class TasksRepositoryImpl: TasksRepository {
         return db.tasksDao().getTasks()
     }
 
+    override fun searchTasks(query: String): Flowable<List<TaskRoom>> {
+        return db.tasksDao().searchTasks("%$query%")
+    }
+
 }
