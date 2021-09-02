@@ -14,7 +14,7 @@ data class TaskRoom(
 
     val description: String? = null,
 
-    val finishDate: Date? = null,
+  //  val finishDate: Date? = null,
 
     val tag: String? = null
 

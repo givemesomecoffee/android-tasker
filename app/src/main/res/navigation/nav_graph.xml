@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/tasksList"
-        android:name="ru.givemesomecoffee.tasker.tasks.TasksList"
+        android:name="ru.givemesomecoffee.tasker.tasks.TasksListFragment"
         android:label="TasksList">
         <action
             android:id="@+id/action_tasksList_to_singleTaskFragment"

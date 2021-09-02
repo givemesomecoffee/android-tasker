@@ -1,34 +1,34 @@
 package ru.givemesomecoffee.tasker.tasks
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
 import ru.givemesomecoffee.tasker.R
-import ru.givemesomecoffee.tasker.data.local.db.DB
 import ru.givemesomecoffee.tasker.data.local.db.TaskRoom
 import ru.givemesomecoffee.tasker.tasks.widget.TasksListAdapter
 
-class TasksList : Fragment(R.layout.fragment_tasks_list) {
+class TasksListFragment : Fragment(R.layout.fragment_tasks_list) {
     private lateinit var buttonTaskAdd: MaterialButton
     private lateinit var recyclerView: RecyclerView
-    private val db = DB.instance.tasksDao()
-    private var disposable: Disposable? = null
+    private val viewModel: TasksListViewModel by viewModels()
+
 
     private fun init() {
         buttonTaskAdd = requireView().findViewById(R.id.button_task_add)
         recyclerView = requireView().findViewById(R.id.recyclerView)
-        disposable = db.getTasks()
-            .firstOrError()
-            .subscribeOn(Schedulers.io())
-            .subscribe{list -> setAdapter(list)}
+        viewModel.tasks.observe(viewLifecycleOwner, { tasks -> setAdapter(tasks) })
+
     }
 
     private fun setAdapter(list: List<TaskRoom>) {
+        Log.d("test", "fragment got data")
+        Log.d("test", list.toString())
         recyclerView.adapter = TasksListAdapter(list)
     }
 
@@ -38,11 +38,7 @@ class TasksList : Fragment(R.layout.fragment_tasks_list) {
         buttonTaskAdd.setOnClickListener {
             findNavController().navigate(R.id.action_tasksList_to_singleTaskFragment)
         }
-    }
 
-    override fun onDestroy() {
-        disposable?.dispose()
-        super.onDestroy()
     }
 
 }
