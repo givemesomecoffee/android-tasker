@@ -2,7 +2,6 @@ package ru.givemesomecoffee.tasker.data.local.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import java.util.*
 
 @Entity(tableName = "tasks")
 data class TaskRoom(
@@ -14,8 +13,12 @@ data class TaskRoom(
 
     val description: String? = null,
 
-  //  val finishDate: Date? = null,
+    //  val finishDate: Date? = null,
 
-    val tag: String? = null
+    val tag: String? = null,
+
+    val isFinished: Boolean = false,
+
+    val isArchived: Boolean = false
 
 )

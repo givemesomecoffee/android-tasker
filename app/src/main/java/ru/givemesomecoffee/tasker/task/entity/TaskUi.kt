@@ -1,4 +1,4 @@
-package ru.givemesomecoffee.tasker.tasks.entity
+package ru.givemesomecoffee.tasker.task.entity
 
 data class TaskUi(
     val id: Long?,

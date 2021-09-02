@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/tasksList"
-        android:name="ru.givemesomecoffee.tasker.tasks.TasksListFragment"
+        android:name="ru.givemesomecoffee.tasker.task.list.TasksListFragment"
         android:label="TasksList">
         <action
             android:id="@+id/action_tasksList_to_singleTaskFragment"
@@ -16,6 +16,6 @@
     </fragment>
     <fragment
         android:id="@+id/singleTaskFragment"
-        android:name="ru.givemesomecoffee.tasker.task.SingleTaskFragment"
+        android:name="ru.givemesomecoffee.tasker.task.edit.TaskEditFragment"
         android:label="SingleTaskFragment" />
 </navigation>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu>
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Dashboard" />
+    <item
+        android:id="@+id/tasksList"
+        android:title="Undone" />
+    <item android:title="Done" />
+    <item android:title="Archive" />
+    <item android:title="Search" />
 </menu>

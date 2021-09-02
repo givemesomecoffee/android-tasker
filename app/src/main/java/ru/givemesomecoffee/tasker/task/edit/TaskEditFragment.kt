@@ -1,4 +1,4 @@
-package ru.givemesomecoffee.tasker.task
+package ru.givemesomecoffee.tasker.task.edit
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,7 @@ import ru.givemesomecoffee.tasker.R
 import ru.givemesomecoffee.tasker.data.local.db.DB
 import ru.givemesomecoffee.tasker.data.local.db.TaskRoom
 
-class SingleTaskFragment : Fragment(R.layout.fragment_single_task) {
+class TaskEditFragment : Fragment(R.layout.fragment_task_edit) {
     private lateinit var editTaskTitleView: TextInputLayout
     private lateinit var editTaskDescriptionView: TextInputLayout
     private lateinit var editTaskConfirmButton: MaterialButton
@@ -28,13 +28,10 @@ class SingleTaskFragment : Fragment(R.layout.fragment_single_task) {
 
         editTaskConfirmButton.setOnClickListener {
             val task = TaskRoom(
-                null,
-                editTaskTitleView.editText?.text.toString(),
-                editTaskDescriptionView.editText?.text.toString()
+                title = editTaskTitleView.editText?.text.toString(),
+                description = editTaskDescriptionView.editText?.text.toString()
             )
             saveTask(task)
-
-
         }
     }
 

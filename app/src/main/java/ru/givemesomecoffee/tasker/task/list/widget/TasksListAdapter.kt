@@ -1,4 +1,4 @@
-package ru.givemesomecoffee.tasker.tasks.widget
+package ru.givemesomecoffee.tasker.task.list.widget
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
