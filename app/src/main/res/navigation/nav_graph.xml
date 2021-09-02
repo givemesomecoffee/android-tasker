@@ -6,6 +6,16 @@
 
     <fragment
         android:id="@+id/tasksList"
-        android:name="ru.givemesomecoffee.tasker.tasks.TasksList"
-        android:label="TasksList" />
+        android:name="ru.givemesomecoffee.tasker.tasks.TasksListFragment"
+        android:label="TasksList">
+        <action
+            android:id="@+id/action_tasksList_to_singleTaskFragment"
+            app:destination="@id/singleTaskFragment"
+            app:launchSingleTop="true"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleTaskFragment"
+        android:name="ru.givemesomecoffee.tasker.task.SingleTaskFragment"
+        android:label="SingleTaskFragment" />
 </navigation>
